@@ -75,7 +75,7 @@ As mentioned, you will be using [ViralWasm-Epi](https://niema-lab.github.io/Vira
 
 All of the output files are plain-text files (meaning you can technically open any of them in any text editor, such as Notepad or TextEdit), but they are not as meaningful on their own. Instead, we can visualize the results.
 
-## Output: Multiple Sequence Alignment
+## Output 1: Multiple Sequence Alignment
 The Multiple Sequence Alignment can be visualized using [AlignmentViewer](https://alignmentviewer.org/).
 
 1. Go to the AlignmentViewer website: https://alignmentviewer.org/
@@ -83,7 +83,7 @@ The Multiple Sequence Alignment can be visualized using [AlignmentViewer](https:
 3. Select the file you downloaded when you clicked the blue "Download Alignment" button
 4. Once the application loads your dataset, you can scroll left and right to view your alignment.
 
-## Output: Unrooted Mutation Phylogenetic Tree
+## Output 2: Unrooted Mutation Phylogenetic Tree
 The unrooted mutation phylogenetic tree can be visualized using [phylotree.js](https://phylotree.hyphy.org/):
 
 1. Go to the phylotree.js website: https://phylotree.hyphy.org/
@@ -94,7 +94,7 @@ The unrooted mutation phylogenetic tree can be visualized using [phylotree.js](h
 
 You might be wondering why the tree was first visualized as if it was rooted. This is because the phylogenetic inference tools typically output the tree with some arbitrary root due to limitations of the output file format. It is up to the researcher to recognize that this root is meaningless (and to only interpret the tree as unrooted).
 
-## Output: Rooted Time Phylogenetic Tree
+## Output 3: Rooted Time Phylogenetic Tree
 The rooted time phylogenetic tree can be visualized using [Taxonium](https://taxonium.org/):
 
 1. Extract the zip file that you downloaded when you clicked the blue "Download LSD2 Results" button
