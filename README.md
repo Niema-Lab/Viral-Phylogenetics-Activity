@@ -55,17 +55,50 @@ Also, because we didn't provide the phylogenetic inference methods any temporal 
 As mentioned, the trees produced by phylogenetic inference methods are unrooted, and the branch lengths are in unit of mutations (not time). However, if we know the collection dates of the sequences in our dataset, we can use mathematical models of evolution to determine the most likely root as well as the most likely mutation rates across the branches in the tree. In other words, we can "root" the tree (i.e., find the most likely position of the Most Recent Common Ancestor (MRCA)) as well as "date" the tree (scale the branch lengths to be in unit of time).
 
 # Perform the Analysis!
-As mentioned, you will be using [ViralWasm-Epi](https://niema-lab.github.io/ViralWasm-Epi) to perform your viral phylogenetics analysis. Download the [HIV-1](datasets/HIV-1) or [SARS-CoV-2](datasets/SARS-CoV-2) dataset and follow these steps:
+As mentioned, you will be using [ViralWasm-Epi](https://niema-lab.github.io/ViralWasm-Epi) to perform your viral phylogenetics analysis. This tool uses [ViralMSA](https://github.com/niemasd/ViralMSA) to perform Multiple Sequence Alignment, [FastTree 2](http://www.microbesonline.org/fasttree/) to perform phylogenetic inference, and [LSD2](https://github.com/tothuhien/lsd2) to perform tree rooting and dating.
 
-1. Go to the ViralWasm-Epi website: https://niema-lab.github.io/ViralWasm-Epi
-2. For "Input Sequence File", select the `_sequences.fas` file from the dataset that you selected
-3. Make sure that the "Skip Sequence Alignment" box is **not** checked (because we need to perform alignment)
-4. For "Select Preloaded Reference Sequence", from the dropdown, select either `HIV-1` or `SARS-CoV-2` (depending on which of the datasets you selected)
-5. Check the "Omit Reference Sequence from Output" box
-6. Check the "Perform Phylogenetic Inference" box
+1. Download the [HIV-1](datasets/HIV-1) or [SARS-CoV-2](datasets/SARS-CoV-2) dataset
+2. Go to the ViralWasm-Epi website: https://niema-lab.github.io/ViralWasm-Epi
+3. For "Input Sequence File", select the `_sequences.fas` file from the dataset that you selected
+4. Make sure that the "Skip Sequence Alignment" box is **not** checked (because we need to perform alignment)
+5. For "Select Preloaded Reference Sequence", from the dropdown, select either `HIV-1` or `SARS-CoV-2` (depending on which of the datasets you selected)
+6. Check the "Omit Reference Sequence from Output" box
+7. Check the "Perform Phylogenetic Inference" box
   1. Make sure that the "Use Generalized Time Reversible (GTR) Model" and "Gamma Likelihoods" boxes are checked
 7. Check the "Perform Tree Rooting and Dating" box
   1. For "Input Date File", select the `_dates.txt` file from the dataset that you selected
   2. Make sure that the "Infer Root" box is checked
   3. Keep all the other tree rooting/dating parameters as their default values
 8. Click the blue "Run ViralWasm-Epi" button at the bottom
+9. While the analysis is running, you will see the log messages get printed in the textbox to the right of the options
+10. When the analysis finishes running, click the blue "Download Alignment", "Download Phylogenetic Tree", and "Download LSD2 Results" to download the output files
+
+All of the output files are plain-text files (meaning you can technically open any of them in any text editor, such as Notepad or TextEdit), but they are not as meaningful on their own. Instead, we can visualize the results.
+
+## Output: Multiple Sequence Alignment
+The Multiple Sequence Alignment can be visualized using [AlignmentViewer](https://alignmentviewer.org/).
+
+1. Go to the AlignmentViewer website: https://alignmentviewer.org/
+2. Click the "Choose File" button in the top-right corner
+3. Select the file you downloaded when you clicked the blue "Download Alignment" button
+4. Once the application loads your dataset, you can scroll left and right to view your alignment.
+
+## Output: Unrooted Mutation Phylogenetic Tree
+The unrooted mutation phylogenetic tree can be visualized using [phylotree.js](https://phylotree.hyphy.org/):
+
+1. Go to the phylotree.js website: https://phylotree.hyphy.org/
+2. Click the "Newick" button in the top-left corner
+3. Click the "Choose File" button
+4. Select the file you downloaded when you clicked the blue "Download Phylogenetic Tree" button
+5. Click the "Radial" button to the right of the displayed tree
+
+You might be wondering why the tree was first visualized as if it was rooted. This is because the phylogenetic inference tools typically output the tree with some arbitrary root due to limitations of the output file format. It is up to the researcher to recognize that this root is meaningless (and to only interpret the tree as unrooted).
+
+## Output: Rooted Time Phylogenetic Tree
+The rooted time phylogenetic tree can be visualized using [Taxonium](https://taxonium.org/):
+
+1. Extract the zip file that you downloaded when you clicked the blue "Download LSD2 Results" button
+2. Go to the Taxonium website: https://taxonium.org/
+3. Click the "Choose Files" button in the top-left corner
+4. Select the `phylogenetic.tree.result.date.nexus` file you extracted from the zip file
+5. Click the "Launch Taxonium" button
