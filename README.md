@@ -65,14 +65,14 @@ As mentioned, you will be using [ViralWasm-Epi](https://niema-lab.github.io/Vira
 6. Check the "Omit Reference Sequence from Output" box
 7. Check the "Perform Phylogenetic Inference" box
   1. Make sure that the "Use Generalized Time Reversible (GTR) Model" and "Gamma Likelihoods" boxes are checked
-7. Check the "Perform Tree Rooting and Dating" box
+8. Check the "Perform Tree Rooting and Dating" box
   1. For "Input Date File", select the `_dates.txt` file from the dataset that you selected
   2. If you're using the [SARS-CoV-2](datasets/SARS-CoV-2) dataset, for "Outgroup File", select the [`sarscov2_outgroup.txt`](datasets/SARS-CoV-2/sarscov2_outgroup.txt) file and check "Remove Outgroups"
   3. Make sure that the "Infer Root" box is checked
   4. Keep all the other tree rooting/dating parameters as their default values
-8. Click the blue "Run ViralWasm-Epi" button at the bottom
-9. While the analysis is running, you will see the log messages get printed in the textbox to the right of the options
-10. When the analysis finishes running, click the blue "Download Alignment", "Download Phylogenetic Tree", and "Download LSD2 Results" to download the output files
+9. Click the blue "Run ViralWasm-Epi" button at the bottom
+10. While the analysis is running, you will see the log messages get printed in the textbox to the right of the options
+11. When the analysis finishes running, click the blue "Download Alignment", "Download Phylogenetic Tree", and "Download LSD2 Results" to download the output files
 
 All of the output files are plain-text files (meaning you can technically open any of them in any text editor, such as Notepad or TextEdit), but they are not as meaningful on their own. Instead, we can visualize the results.
 
