@@ -26,7 +26,7 @@ CGTAC  # descendant sequence
 23456  # position in ancestral sequence
 ```
 
-Simiarly, if an `C` was inserted at the beginning of the sequence instead, the sequences would also not line up:
+Simiarly, if a `C` was inserted at the beginning of the sequence instead, the sequences would also not line up:
 
 ```
 123456  # position in ancestral sequence
